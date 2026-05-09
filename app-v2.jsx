@@ -215,8 +215,19 @@ function App() {
 // === FEATURED STAGE ===
 function FeaturedStage({ character, index, total, animate, onPrev, onNext }) {
   const a = ACCENT_MAP[character.accent];
+  const touchStartX = useRef(null);
+
+  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 48) { dx < 0 ? onNext() : onPrev(); }
+    touchStartX.current = null;
+  };
+
   return (
-    <div className="featured" style={{ "--accent": a.hex, "--accent-soft": a.soft }}>
+    <div className="featured" style={{ "--accent": a.hex, "--accent-soft": a.soft }}
+      onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       {/* Side prev arrow */}
       <button className="side-arrow side-arrow-l" onClick={onPrev} aria-label="Previous">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -229,7 +240,7 @@ function FeaturedStage({ character, index, total, animate, onPrev, onNext }) {
         <div className="featured-char">
           <PixelCharacter
             characterId={character.id}
-            size={300}
+            size={window.innerWidth <= 480 ? 160 : window.innerWidth <= 720 ? 200 : 300}
             animate={animate}
             accent={character.accent}
           />

@@ -279,9 +279,50 @@
 }
 
 @media (max-width: 720px) {
+  /* Layout */
   .featured { padding: 8px 16px; }
-  .v2-hero { padding: 24px 16px 12px; }
-  .pixel-char { width: 240px; height: 280px; }
-  .rail { padding: 16px; gap: 8px; }
-  .rail-tile { min-width: 72px; padding: 6px 8px 8px; }
+  .v2-hero { padding: 20px 16px 10px; }
+  .v2-headline { font-size: clamp(26px, 9vw, 42px); }
+  .v2-foot { padding: 12px 16px 0; margin-bottom: 16px; }
+
+  /* Hide side arrows — rail handles nav on mobile */
+  .side-arrow { display: none; }
+
+  /* Smaller character */
+  .pixel-char { width: 180px; height: 210px; }
+  .pixel-char-disc { width: 160px; height: 40px; bottom: 20px; }
+  .pixel-char-disc-ring { width: 148px; height: 22px; bottom: 16px; }
+  .pixel-char-spotlight { width: 220px; height: 220px; }
+  .pixel-char-floor { width: 190px; height: 50px; }
+  .featured-grid { padding: 16px; gap: 14px; }
+
+  /* Sticky bottom rail — thumb zone primary nav */
+  .rail {
+    position: sticky;
+    bottom: 0;
+    padding: 10px 16px 16px;
+    gap: 8px;
+    background: oklch(0.08 0.012 260 / 0.96);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line);
+    z-index: 10;
+    margin: 0;
+    max-width: 100%;
+  }
+  .rail-arrow {
+    width: 48px; height: 48px;
+    flex-shrink: 0;
+    border-color: var(--line);
+  }
+  .rail-tiles { gap: 6px; flex: 1; justify-content: center; display: flex; }
+  .rail-tile { min-width: 0; flex: 1; max-width: 80px; padding: 6px 6px 8px; }
+}
+
+@media (max-width: 480px) {
+  .pixel-char { width: 150px; height: 175px; }
+  .featured-grid { padding: 12px; gap: 12px; }
+  .info-name { font-size: clamp(26px, 8vw, 38px); }
+  .rail-tile-codename { font-size: 9px; }
+  .hint-row { display: none; }
+  .help-card { min-width: calc(100vw - 32px); padding: 20px 16px; }
 }
