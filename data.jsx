@@ -36,7 +36,7 @@ const ROSTER = [
     title: "Computer Engineer & SysAdmin",
     location: "Copenhagen",
     bio: [
-      "I'm a Computer Engineering grad and MSc Cybersecurity student with 4+ years running self-hosted infrastructure on Proxmox — DNS, VPN, storage, and services, all managed through declarative NixOS configuration.",
+      "I'm a Computer Engineering grad and MSc Cybersecurity student with 4+ years running self-hosted infrastructure on Proxmox: DNS, VPN, storage, and services, all managed through declarative NixOS configuration.",
       "I build things that are reproducible and secure by design: from a Bitcoin-authenticated OpenVPN server for my thesis to a P2P encrypted chat with Double Ratchet. Currently researching runtime attack detection at the OS level.",
     ],
     skills: [
