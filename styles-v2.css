@@ -375,6 +375,7 @@
 
 .qr-dl-btn {
   display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none;
   margin-left: 12px;
   padding: 5px 7px;
   background: transparent;

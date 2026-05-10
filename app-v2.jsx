@@ -15,21 +15,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 }/*EDITMODE-END*/;
 
 function QrDownloadBtn() {
-  const download = () => {
-    QRCode.toDataURL("https://open-2-work.github.io/open2work-website/", {
-      width: 512,
-      margin: 2,
-      color: { dark: "#000000", light: "#ffffff" },
-    }, (err, url) => {
-      if (err) { console.error("QR error", err); return; }
-      const a = document.createElement("a");
-      a.download = "open2work-qr.png";
-      a.href = url;
-      a.click();
-    });
-  };
   return (
-    <button className="qr-dl-btn" onClick={download} title="Download QR code" aria-label="Download QR code">
+    <a className="qr-dl-btn" href="assets/qr-code.png" download="open2work-qr.png" title="Download QR code" aria-label="Download QR code">
       <svg viewBox="0 0 9 9" width="18" height="18" aria-hidden>
         {[[0,0],[1,0],[2,0],[0,1],[2,1],[0,2],[1,2],[2,2],
           [6,0],[7,0],[8,0],[6,1],[8,1],[6,2],[7,2],[8,2],
@@ -37,7 +24,11 @@ function QrDownloadBtn() {
           [4,4],[5,5],[4,6],[6,4],[3,3],[5,3],[3,5],[6,6],[7,7],[8,8]
         ].map(([x,y], i) => <rect key={i} x={x} y={y} width="1" height="1" fill="currentColor"/>)}
       </svg>
-    </button>
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden style={{marginLeft:"5px"}}>
+        <path d="M8 11 L3 6 H6.5 V1 H9.5 V6 H13 Z" fill="currentColor"/>
+        <rect x="2.5" y="13" width="11" height="2" rx="1" fill="currentColor"/>
+      </svg>
+    </a>
   );
 }
 
