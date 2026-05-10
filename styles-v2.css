@@ -181,6 +181,7 @@
   color: var(--fg-1);
 }
 .info-quote .quote-mark { font-family: var(--font-mono); font-style: normal; color: var(--accent); font-weight: 700; opacity: 0.6; }
+.info-quote .quote-source { font-size: 13px; font-style: normal; color: var(--fg-2); margin-top: 6px; }
 .info-section { margin-top: 18px; }
 .quick-links-row { flex-direction: row; flex-wrap: wrap; }
 .quick-links-row .link-btn { width: auto; }

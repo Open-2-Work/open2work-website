@@ -321,6 +321,7 @@ function FeaturedStage({ character, index, total, animate, onPrev, onNext }) {
 
           <blockquote className="info-quote">
             <span className="quote-mark">"</span>{character.quote}<span className="quote-mark">"</span>
+            {character.quoteSource && <footer className="quote-source">— {character.quoteSource}</footer>}
           </blockquote>
 
           <section className="info-section">

@@ -36,8 +36,8 @@ const ROSTER = [
     title: "Computer Engineer & SysAdmin",
     location: "Copenhagen",
     bio: [
-      "Bachelor thesis: a post-authentication script that gates an OpenVPN server behind a Bitcoin payment — security and crypto, end to end. Builds at parox.dev on the side.",
-      "Has shipped a secure distributed chat and a Java pipeline that scrapes online newspapers and surfaces the most important terms. Prefers his coffee like his code: black, no sugar, predictable.",
+      "I'm a Computer Engineering grad and MSc Cybersecurity student with 4+ years running self-hosted infrastructure on Proxmox — DNS, VPN, storage, and services, all managed through declarative NixOS configuration.",
+      "I build things that are reproducible and secure by design: from a Bitcoin-authenticated OpenVPN server for my thesis to a P2P encrypted chat with Double Ratchet. Currently researching runtime attack detection at the OS level.",
     ],
     skills: [
       { name: "Nix / NixOS", level: 90 },
@@ -48,7 +48,8 @@ const ROSTER = [
       { name: "Python", level: 70 },
     ],
     stats: { commits: "—", talks: 0, oss: 6 },
-    quote: "Trust, but verify the signature.",
+    quote: "Improving daily work is even more important than doing daily work.",
+    quoteSource: "Gene Kim, The Phoenix Project",
     accent: "cyan",
     linkedin: "https://www.linkedin.com/in/luca-parolini-40b98a202/",
     github: "https://github.com/cooparo",
