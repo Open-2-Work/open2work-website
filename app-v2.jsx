@@ -14,6 +14,33 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "characterAnimate": true
 }/*EDITMODE-END*/;
 
+function QrDownloadBtn() {
+  const download = () => {
+    QRCode.toDataURL("https://open-2-work.github.io/open2work-website/", {
+      width: 512,
+      margin: 2,
+      color: { dark: "#000000", light: "#ffffff" },
+    }, (err, url) => {
+      if (err) { console.error("QR error", err); return; }
+      const a = document.createElement("a");
+      a.download = "open2work-qr.png";
+      a.href = url;
+      a.click();
+    });
+  };
+  return (
+    <button className="qr-dl-btn" onClick={download} title="Download QR code" aria-label="Download QR code">
+      <svg viewBox="0 0 9 9" width="18" height="18" aria-hidden>
+        {[[0,0],[1,0],[2,0],[0,1],[2,1],[0,2],[1,2],[2,2],
+          [6,0],[7,0],[8,0],[6,1],[8,1],[6,2],[7,2],[8,2],
+          [0,6],[1,6],[2,6],[0,7],[2,7],[0,8],[1,8],[2,8],
+          [4,4],[5,5],[4,6],[6,4],[3,3],[5,3],[3,5],[6,6],[7,7],[8,8]
+        ].map(([x,y], i) => <rect key={i} x={x} y={y} width="1" height="1" fill="currentColor"/>)}
+      </svg>
+    </button>
+  );
+}
+
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -93,6 +120,7 @@ function App() {
           <span className="status-live">
             <span className="status-dot" /> 4 ONLINE
           </span>
+          <QrDownloadBtn />
         </div>
       </header>
 
@@ -334,9 +362,12 @@ function FeaturedStage({ character, index, total, animate, onPrev, onNext }) {
                   <span className="link-arrow">↗</span>
                 </a>
               )}
-              <a className="link-btn" href={character.cv} download>
-                <span>DOWNLOAD CV</span>
-              </a>
+              {character.email && (
+                <a className="link-btn" href={`mailto:${character.email}`}>
+                  <span>CONTACT</span>
+                  <span className="link-arrow">✉</span>
+                </a>
+              )}
             </div>
           </section>
         </div>

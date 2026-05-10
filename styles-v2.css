@@ -372,3 +372,21 @@
   .hint-row { display: none; }
   .help-card { min-width: calc(100vw - 32px); padding: 20px 16px; }
 }
+
+.qr-dl-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-left: 12px;
+  padding: 5px 7px;
+  background: transparent;
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+  color: var(--fg-2);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  line-height: 0;
+}
+.qr-dl-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent-soft);
+  background: oklch(from var(--accent) l c h / 0.08);
+}

@@ -27,7 +27,7 @@ const ROSTER = [
     accent: "lime",
     linkedin: "https://www.linkedin.com/in/davide-benedetti-bb717a260/",
     github: "https://github.com/dadded01",
-    cv: "#cv-davide",
+    email: "davidebenedetti1@gmail.com",
   },
   {
     id: "02",
@@ -54,7 +54,7 @@ const ROSTER = [
     linkedin: "https://www.linkedin.com/in/luca-parolini-40b98a202/",
     github: "https://github.com/cooparo",
     site: "https://parox.dev",
-    cv: "#cv-luca",
+    email: "pparolini1@gmail.com",
   },
   {
     id: "03",
@@ -80,7 +80,7 @@ const ROSTER = [
     accent: "magenta",
     linkedin: "https://www.linkedin.com/in/michael-fantinato-61971525a/",
     github: null,
-    cv: "#cv-michael",
+    email: "fantinato.michael@gmail.com",
   },
   {
     id: "04",
@@ -106,7 +106,7 @@ const ROSTER = [
     accent: "amber",
     linkedin: "https://www.linkedin.com/in/jinpeng-zhang-946843204/",
     github: "https://github.com/Jimpoz/techathon",
-    cv: "#cv-jinpeng",
+    email: "jimpo.jpz@gmail.com",
   },
 ];
 
