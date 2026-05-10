@@ -293,8 +293,7 @@ function FeaturedStage({ character, index, total, animate, onPrev, onNext }) {
             <h2 className="info-name">{character.name}<Caret /></h2>
             <div className="info-title-row">
               <span className="info-title">{character.title}</span>
-              <span className="dot-sep">·</span>
-              <span className="dim">{character.yearsExp} yr exp</span>
+              {character.yearsExp && <><span className="dot-sep">·</span><span className="dim">{character.yearsExp} yr exp</span></>}
               <span className="dot-sep">·</span>
               <span className="dim">{character.location}</span>
             </div>
