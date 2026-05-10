@@ -19,6 +19,14 @@
   font-family: var(--font-mono); font-size: 14px;
   color: var(--fg-1); margin: 0;
 }
+.tagline-highlight {
+  color: var(--accent);
+  font-weight: 700;
+  border: 1px solid var(--accent);
+  padding: 1px 6px;
+  border-radius: 2px;
+  background: var(--accent-soft);
+}
 
 /* Featured stage */
 .featured {

@@ -8,7 +8,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "background": "grid",
   "scanlines": true,
   "ambientGlow": true,
-  "tagline": "Four tech juniors. One apartment. Available now.",
+  "tagline": "Four tech juniors. One apartment. Available now. Looking for a student job position.",
   "headline": "SELECT YOUR HIRE",
   "showBalconyPrompt": true,
   "characterAnimate": true
@@ -144,7 +144,11 @@ function App() {
           <Caret />
         </div>
         <h1 className="v2-headline">{t.headline}</h1>
-        <p className="v2-tagline">{t.tagline}</p>
+        <p className="v2-tagline">{t.tagline.split("student job position").map((part, i, arr) =>
+          i < arr.length - 1
+            ? <React.Fragment key={i}>{part}<span className="tagline-highlight">student job position</span></React.Fragment>
+            : part
+        )}</p>
       </div>
 
       {/* MAIN STAGE — featured card + character */}
