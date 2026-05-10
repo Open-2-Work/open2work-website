@@ -28,6 +28,7 @@ const ROSTER = [
     linkedin: "https://www.linkedin.com/in/davide-benedetti-bb717a260/",
     github: "https://github.com/dadded01",
     email: "davidebenedetti1@gmail.com",
+    cvPath: "assets/cv/Davide_Benedetti.pdf",
   },
   {
     id: "02",
@@ -82,6 +83,7 @@ const ROSTER = [
     linkedin: "https://www.linkedin.com/in/michael-fantinato-61971525a/",
     github: null,
     email: "fantinato.michael@gmail.com",
+    cvPath: "assets/cv/Micheal_Fantinato.pdf",
   },
   {
     id: "04",
@@ -108,6 +110,7 @@ const ROSTER = [
     linkedin: "https://www.linkedin.com/in/jinpeng-zhang-946843204/",
     github: "https://github.com/Jimpoz/techathon",
     email: "jimpo.jpz@gmail.com",
+    cvPath: "assets/cv/Jinpeng_Zhang.pdf",
   },
 ];
 

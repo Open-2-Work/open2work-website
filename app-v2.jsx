@@ -14,9 +14,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "characterAnimate": true
 }/*EDITMODE-END*/;
 
-function CvDownloadBtn({ cvRepo }) {
-  const [url, setUrl] = useState(null);
+function CvDownloadBtn({ cvRepo, cvPath }) {
+  const [url, setUrl] = useState(cvPath || null);
   useEffect(() => {
+    if (!cvRepo) return;
     fetch(`https://api.github.com/repos/${cvRepo}/releases/latest`)
       .then(r => r.json())
       .then(data => {
@@ -379,7 +380,7 @@ function FeaturedStage({ character, index, total, animate, onPrev, onNext }) {
                   <span className="link-arrow">✉</span>
                 </a>
               )}
-              {character.cvRepo && <CvDownloadBtn cvRepo={character.cvRepo} />}
+              {(character.cvRepo || character.cvPath) && <CvDownloadBtn cvRepo={character.cvRepo} cvPath={character.cvPath} />}
             </div>
           </section>
         </div>
