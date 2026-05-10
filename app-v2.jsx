@@ -399,7 +399,7 @@ function FloatingController({ activeIdx, total, onPrev, onNext }) {
       </button>
       <div className="fc-dots" aria-hidden>
         {Array.from({ length: total }).map((_, i) => (
-          <span key={i} className={`fc-dot ${i === activeIdx ? "is-active" : ""}`} />
+          <span key={i} className={i === activeIdx ? "fc-dot is-active" : "fc-dot"} />
         ))}
       </div>
       <button className="fc-arrow" onClick={onNext} aria-label="Next">
