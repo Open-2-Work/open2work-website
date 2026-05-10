@@ -14,6 +14,26 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "characterAnimate": true
 }/*EDITMODE-END*/;
 
+function CvDownloadBtn({ cvRepo }) {
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    fetch(`https://api.github.com/repos/${cvRepo}/releases/latest`)
+      .then(r => r.json())
+      .then(data => {
+        const asset = data.assets && data.assets[0];
+        if (asset) setUrl(asset.browser_download_url);
+      })
+      .catch(() => {});
+  }, [cvRepo]);
+  if (!url) return null;
+  return (
+    <a className="link-btn" href={url} download>
+      <span>DOWNLOAD CV</span>
+      <span className="link-arrow">↓</span>
+    </a>
+  );
+}
+
 function QrDownloadBtn() {
   return (
     <a className="qr-dl-btn" href="assets/qr-code.png" download="open2work-qr.png" title="Download QR code" aria-label="Download QR code">
@@ -358,6 +378,7 @@ function FeaturedStage({ character, index, total, animate, onPrev, onNext }) {
                   <span className="link-arrow">✉</span>
                 </a>
               )}
+              {character.cvRepo && <CvDownloadBtn cvRepo={character.cvRepo} />}
             </div>
           </section>
         </div>

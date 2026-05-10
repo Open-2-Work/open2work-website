@@ -54,6 +54,7 @@ const ROSTER = [
     github: "https://github.com/cooparo",
     site: "https://parox.dev",
     email: "pparolini1@gmail.com",
+    cvRepo: "cooparo/curriculum-vitae",
   },
   {
     id: "03",
