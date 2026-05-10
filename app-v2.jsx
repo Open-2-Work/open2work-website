@@ -118,11 +118,19 @@ function App() {
         onNext={goNext}
       />
 
-      {/* Bottom rail */}
+      {/* Bottom rail — desktop */}
       <BottomRail
         characters={characters}
         activeIdx={activeIdx}
         onSelect={setActiveIdx}
+        onPrev={goPrev}
+        onNext={goNext}
+      />
+
+      {/* Floating controller — mobile only */}
+      <FloatingController
+        activeIdx={activeIdx}
+        total={characters.length}
         onPrev={goPrev}
         onNext={goNext}
       />
@@ -375,6 +383,29 @@ function BottomRail({ characters, activeIdx, onSelect, onPrev, onNext }) {
       </div>
       <button className="rail-arrow" onClick={onNext}>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3 L9 7 L5 11" stroke="currentColor" strokeWidth="1.5"/></svg>
+      </button>
+    </div>
+  );
+}
+
+// === FLOATING CONTROLLER (mobile only) ===
+function FloatingController({ activeIdx, total, onPrev, onNext }) {
+  return (
+    <div className="floating-controller" aria-label="Character navigation">
+      <button className="fc-arrow" onClick={onPrev} aria-label="Previous">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M10 3 L6 8 L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      </button>
+      <div className="fc-dots" aria-hidden>
+        {Array.from({ length: total }).map((_, i) => (
+          <span key={i} className={`fc-dot ${i === activeIdx ? "is-active" : ""}`} />
+        ))}
+      </div>
+      <button className="fc-arrow" onClick={onNext} aria-label="Next">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M6 3 L10 8 L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
       </button>
     </div>
   );
