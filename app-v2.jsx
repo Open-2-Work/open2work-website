@@ -8,7 +8,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "background": "grid",
   "scanlines": true,
   "ambientGlow": true,
-  "tagline": "Four junior engineers. One apartment. Available now.",
+  "tagline": "Four tech juniors. One apartment. Available now.",
   "headline": "SELECT YOUR HIRE",
   "showBalconyPrompt": true,
   "characterAnimate": true
